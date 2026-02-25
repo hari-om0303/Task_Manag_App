@@ -30,7 +30,7 @@ exports.register = async (req, res) => {
         });
 
     } catch (error) {
-        res.status(500).json({ message: "Server error" });
+        next(error);
     }
 };
 
@@ -69,6 +69,6 @@ exports.login = async (req, res) => {
         });
 
     } catch (error) {
-        res.status(500).json({ message: "Server error" });
+       next(error);
     }
 };

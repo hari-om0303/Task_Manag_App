@@ -17,7 +17,7 @@ const createTask = async (req, res) => {
 
     res.status(201).json(task);
   } catch (error) {
-    res.status(500).json({ message: "Server error" });
+   next(error);
   }
 };
 
@@ -49,7 +49,7 @@ const getTasks = async (req, res) => {
       tasks,
     });
   } catch (error) {
-    res.status(500).json({ message: "Server error" });
+    next(error);
   }
 };
 
@@ -81,7 +81,7 @@ const updateTask = async (req, res) => {
 
   } catch (error) {
     console.error(error);
-    res.status(500).json({ message: "Server error" });
+   next(error);
   }
 };
 
@@ -101,7 +101,7 @@ const deleteTask = async (req, res) => {
 
     res.status(200).json({ message: "Task deleted successfully" });
   } catch (error) {
-    res.status(500).json({ message: "Server error" });
+  next(error);
   }
 };
 
