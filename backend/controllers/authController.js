@@ -4,7 +4,7 @@ const jwt = require("jsonwebtoken");
 const generateToken = require("../utils/generateToken");
 
 
-exports.register = async (req, res) => {
+exports.register = async (req, res , next) => {
     try {
         const { name, email, password } = req.body;
 
@@ -36,7 +36,7 @@ exports.register = async (req, res) => {
 
 
 
-exports.login = async (req, res) => {
+exports.login = async (req, res , next) => {
     try {
         const { email, password } = req.body;
 
