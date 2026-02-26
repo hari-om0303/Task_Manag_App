@@ -19,7 +19,7 @@ app.use(express.json());
 app.use(cookieParser()); 
 
 app.use(cors({
-  origin: "https://task-manag-app.vercel.app",
+  origin: true,
   credentials: true
 }));
 
