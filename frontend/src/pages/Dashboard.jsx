@@ -99,7 +99,7 @@ function Dashboard() {
 
   return (
     <div className="container">
-      <div className="header">
+      <div className="deshheader">
         <h2>Task Dashboard</h2>
         <button className="logout-btn" onClick={logout}>
           Logout
