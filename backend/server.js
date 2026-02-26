@@ -19,12 +19,10 @@ app.use(express.json());
 app.use(cookieParser()); 
 
 app.use(cors({
-  origin: [
-    "http://localhost:3000",
-    "https://task-manag-app.vercel.app"
-  ],
+  origin: "https://task-manag-app.vercel.app",
   credentials: true
 }));
+
 app.use("/api/auth", authRoutes);
 app.use("/api/tasks", taskRoutes);
 
