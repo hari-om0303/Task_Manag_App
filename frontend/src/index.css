@@ -91,8 +91,15 @@ body {
 
 /* Auth Pages */
 
+.header {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .auth-container {
-  height: 100vh;
+  height: 70vh;
   display: flex;
   justify-content: center;
   align-items: center;
