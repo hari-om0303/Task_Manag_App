@@ -28,6 +28,8 @@ function Register() {
   };
 
   return (
+    <div>
+      <div className="header"><h1>Task Management App</h1></div>
     <div className="auth-container">
       <div className="auth-card">
         <h2>Register</h2>
@@ -70,6 +72,7 @@ function Register() {
         </p>
       </div>
     </div>
+     </div>
   );
 }
 

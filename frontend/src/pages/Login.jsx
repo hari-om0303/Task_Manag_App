@@ -24,6 +24,8 @@ function Login() {
   };
 
   return (
+    <div>
+      <div className="header"><h1>Task Management App</h1></div>
     <div className="auth-container">
       <div className="auth-card">
         <h2>Login</h2>
@@ -56,6 +58,7 @@ function Login() {
           Don't have an account? <Link to="/register">Register</Link>
         </p>
       </div>
+    </div>
     </div>
   );
 }
