@@ -4,7 +4,7 @@ const jwt = require("jsonwebtoken");
 const generateToken = require("../utils/generateToken");
 
 
-exports.register = async (req, res , next) => {
+exports.register = async (req, res, next) => {
     try {
         const { name, email, password } = req.body;
 
@@ -36,7 +36,7 @@ exports.register = async (req, res , next) => {
 
 
 
-exports.login = async (req, res , next) => {
+exports.login = async (req, res, next) => {
     try {
         const { email, password } = req.body;
 
@@ -60,15 +60,28 @@ exports.login = async (req, res , next) => {
 
         res.cookie("token", token, {
             httpOnly: true,
-            secure: false, // change to true in production
-            sameSite: "strict"
+            secure: process.env.NODE_ENV === "production",
+            sameSite: "strict",
         });
-
         res.status(200).json({
             message: "Login successful"
         });
 
     } catch (error) {
-       next(error);
+        next(error);
     }
+};
+
+
+exports.logout = (req, res) => {
+  res.cookie("token", "", {
+    httpOnly: true,
+    secure: process.env.NODE_ENV === "production",
+    sameSite: "strict",
+    expires: new Date(0),
+  });
+
+  res.status(200).json({
+    message: "Logged out successfully",
+  });
 };
